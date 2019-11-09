@@ -17,7 +17,7 @@ class Player extends Component {
       mute: false,
       volume: 1.0,
       seek: 0.00,
-      pos: 0
+      repeat: 0
     }
   }
 
@@ -93,8 +93,15 @@ class Player extends Component {
     
   }
 
-  handleOnRepeat = () => {
-
+  handleRepeat = () => {
+    const pos = this.state.seek.toFixed(2);
+    console.log('before', pos);
+    const newPos = this.state.seek - 5;
+    this.player.seek(newPos);
+    if (this.state.playing) {
+      this._raf = raf(this.renderSeekPos);
+    }
+    console.log('after', this.state.seek.toFixed(2));
   }
 
 
@@ -161,15 +168,32 @@ class Player extends Component {
             </label>
           </div>
 
+          <div className='volume'>
+            <label>
+              Repeat:
+              <span className='slider-container'>
+                <input
+                  type='range'
+                  min='0'
+                  max='10'
+                  step='.5'
+                  value={this.state.repeat}
+                  onChange={e => this.setState({repeat: parseFloat(e.target.value)})}
+                  style={{verticalAlign: 'bottom'}}
+                />
+              </span>
+              {this.state.repeat.toFixed(2)}
+            </label>
+          </div>
           
-          {/* <Button onClick={this.handleOnPlay}>Play</Button>
-          <Button onClick={this.handleOnPause}>Pause</Button>
-          <Button onClick={this.handleOnRepeat}>Repeat</Button> */}
           <Button onClick={this.handleToggle}>
             {(this.state.playing) ? 'Pause' : 'Play'}
           </Button>
           <Button onClick={this.handleStop}>
             Stop
+          </Button>
+          <Button onClick={this.handleRepeat} >
+            Repeat
           </Button>
         </div>
       )
