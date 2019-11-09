@@ -17,7 +17,7 @@ class Player extends Component {
       mute: false,
       volume: 1.0,
       seek: 0.00,
-      repeat: 0
+      repeat: 5.0
     }
   }
 
@@ -96,7 +96,7 @@ class Player extends Component {
   handleRepeat = () => {
     const pos = this.state.seek.toFixed(2);
     console.log('before', pos);
-    const newPos = this.state.seek - 5;
+    const newPos = pos - this.state.repeat;
     this.player.seek(newPos);
     if (this.state.playing) {
       this._raf = raf(this.renderSeekPos);
@@ -106,7 +106,7 @@ class Player extends Component {
 
 
   render() {
-    if (this.state.initialized === true) {
+  //  if (this.state.initialized === true) {
       return (
         <div>
           <ReactHowler
@@ -168,21 +168,21 @@ class Player extends Component {
             </label>
           </div>
 
-          <div className='volume'>
+          <div className='repeat'>
             <label>
               Repeat:
               <span className='slider-container'>
                 <input
                   type='range'
                   min='0'
-                  max='10'
+                  max='20'
                   step='.5'
                   value={this.state.repeat}
                   onChange={e => this.setState({repeat: parseFloat(e.target.value)})}
                   style={{verticalAlign: 'bottom'}}
                 />
               </span>
-              {this.state.repeat.toFixed(2)}
+              {this.state.repeat}
             </label>
           </div>
           
@@ -197,18 +197,18 @@ class Player extends Component {
           </Button>
         </div>
       )
-    } else {
-      return (
-        <div>
-          <Button
-            className='full'
-            onClick={e => this.setState({initialized: true})}
-          >
-            Initialize Auto Player
-          </Button>
-        </div>
-      )
-    }
+    // } else {
+    //   return (
+    //     <div>
+    //       <Button
+    //         className='full'
+    //         onClick={e => this.setState({initialized: true})}
+    //       >
+    //         Initialize Auto Player
+    //       </Button>
+    //     </div>
+    //   )
+    // }
   }
 }
 
