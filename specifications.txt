@@ -1,0 +1,32 @@
+Features:
+  flash cards--spanish <=> english
+    listen and print answer
+  orally anounce flashcards
+    listen and print answer
+  play back recorded speech on disk
+    repeat prior sentence
+    repeat is variable time
+  record and print speech
+
+
+Programming
+  File component;  https://reactjs.org/docs/uncontrolled-components.html
+
+  File api:  https://developer.mozilla.org/en-US/docs/Web/API/File
+
+  Sound:  react Howler:  https://github.com/thangngoc89/react-howler/blob/master/examples/react/src/styles/index.css; https://howlerjs.com--uses first webm the html5 audio
+/
+    
+      https://react-hooks-update-c530e.firebaseio.com--use html5 audio only
+
+  Speech:  Apparently peech API requires a provided limited grammar--thus not apporpriate for random translation.  https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition; https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API; https://www.npmjs.com/package/react-speech-recognition
+
+    IBM Watson speech to text:  https://github.com/AaronWard/IBM-Watson-Speech-To-Text
+
+    Amazon:  https://docs.aws.amazon.com/transcribe/latest/dg/websocket.html; https://docs.aws.amazon.com/transcribe/latest/dg/how-streaming.html
+
+    Amazon seems best for accuracy and price--use it.
+
+    Tutorial:  uses SpeechRecognition API:  https://medium.com/@amanda.k.hussey/a-basic-tutorial-on-how-to-incorporate-speech-recognition-with-react-6dff9763cea5
+
+    Websockets: appears best for Amazon.  A good example of using websockets in react:  https://dev.to/finallynero/using-websockets-in-react-4fkp; https://www.npmjs.com/package/react-websocket; useWebSocket: https://www.npmjs.com/package/react-use-websocket; tutorial:  https://appdividend.com/2019/04/03/websockets-tutorial-with-example-getting-started-with-websockets/

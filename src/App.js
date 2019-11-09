@@ -1,12 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Player from './Player';
+// import FullControl from './FullControl2';
+// import AutoPlay from './AutoPlay';
 
 function App() {
   return (
     <div className="App">
       <Player />
+      {/* <FullControl /> */}
+      {/* <AutoPlay /> */}
     </div>
   );
 }
