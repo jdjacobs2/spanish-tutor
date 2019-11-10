@@ -1,13 +1,19 @@
 import React from 'react';
-import './App.css';
+import styles from './App.module.css';
 import Player from './Player';
+import Voice from './Voice';
+import FileDialogue from './FileDialogue';
+import FileInput from './FileInput';
 // import FullControl from './FullControl2';
 // import AutoPlay from './AutoPlay';
 
 function App() {
   return (
-    <div className="App">
+    <div className={styles.App}>
       <Player />
+      <Voice />
+      <FileInput />
+      {/* <FileDialogue /> */}
       {/* <FullControl /> */}
       {/* <AutoPlay /> */}
     </div>
