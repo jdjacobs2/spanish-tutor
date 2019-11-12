@@ -1,0 +1,20 @@
+.line {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.item {
+  width: 30%;
+  display: inline-block;
+  margin: 0 20px;
+  text-align: center;
+  /* background-color: yellow; */
+}
+
+.spacer {
+  min-size: 5px;
+  display: inline-block;
+  margin: 0 20px;
+  content: ""
+}

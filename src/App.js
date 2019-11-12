@@ -2,8 +2,9 @@ import React from 'react';
 import styles from './App.module.css';
 import Player from './Player';
 import Voice from './Voice';
-import FileDialogue from './FileDialogue';
 import FileInput from './FileInput';
+import FlashCard from './FlashCard';
+// import FlashCard from './FlashCard-old';
 // import FullControl from './FullControl2';
 // import AutoPlay from './AutoPlay';
 
@@ -13,6 +14,7 @@ function App() {
       <Player />
       <Voice />
       <FileInput />
+      <FlashCard />
       {/* <FileDialogue /> */}
       {/* <FullControl /> */}
       {/* <AutoPlay /> */}
