@@ -25,13 +25,11 @@ export class FlashCard extends Component {
   // }
 
   componentDidMount() {
-    // this.myFetch("https://sheets.googleapis.com/v4/spreadsheets/1XW7Bqt9rOnUKTsiQ0EK5JvWiYYJcOU1YUsAqGEcGYWs/values/A2%3AB3?key=AIzaSyAaidmiX5kasRAnH8MZBh6TyHakZEnjCcY");
     fetch(
       "https://sheets.googleapis.com/v4/spreadsheets/1XW7Bqt9rOnUKTsiQ0EK5JvWiYYJcOU1YUsAqGEcGYWs/values/A2%3AB10?key=AIzaSyAaidmiX5kasRAnH8MZBh6TyHakZEnjCcY"
     )
       .then(response => response.json())
       .then(data => {
-        console.log(data.values);
         this.setState({ response: data.values })
       });
   }
@@ -40,11 +38,10 @@ export class FlashCard extends Component {
     const data = this.state.response.map((item) =>
       (<p className={styles.line}>
         <span className={styles.item}>{item[0]}</span>
-        {/* <span className={styles.spacer}></span> */}
         <span className={styles.item}>{item[1]}</span>
       </p>));
     return (
-      <div>
+      <div style={{marginTop:'35px'}}>
         {data}
       </div>
     )
