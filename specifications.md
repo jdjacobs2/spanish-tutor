@@ -57,3 +57,22 @@ Features:
 
       curl --location --request GET "https://sheets.googleapis.com/v4/spreadsheets/1XW7Bqt9rOnUKTsiQ0EK5JvWiYYJcOU1YUsAqGEcGYWs/values/A2%3AB3?key=AIzaSyAaidmiX5kasRAnH8MZBh6TyHakZEnjCcY"
 
+* INTRODUCTION TO ALL DETAILS OF GOOGLE SHEETS API v4:  https://developers.google.com/sheets/api/guides/concepts
+
+* Google Sheets API v4 update documentation:  https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values/update; also see for remainder or request: https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values#ValueRange
+
+* Google npm module for speadsheet access: https://www.npmjs.com/package/google-spreadsheet
+
+* Github for google-api-nodejs-client: https://github.com/googleapis/google-api-nodejs-client
+
+* npm module for Google API's Node.js client:  https://www.npmjs.com/package/googleapis.  Not under active development.  See next ...
+
+* npm module apparently successor to previous library:  https://github.com/googleapis/google-cloud-node
+
+* Execute function using Sheets Apps Script API:  https://developers.google.com/apps-script/api/how-tos/execute
+
+* Google Sheets codelab for node developing entire project:  https://codelabs.developers.google.com/codelabs/sheets-api/#0
+
+* Google recommended style sheet for html dialogs in Sheets: https://developers.google.com/gsuite/add-ons/guides/css
+
+* Good example to create dialog in Google Sheets Script:  https://yagisanatode.com/2018/06/10/google-apps-script-getting-input-data-from-a-dialog-box-in-google-sheets/

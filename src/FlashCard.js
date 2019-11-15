@@ -26,7 +26,7 @@ export class FlashCard extends Component {
 
   componentDidMount() {
     fetch(
-      "https://sheets.googleapis.com/v4/spreadsheets/1XW7Bqt9rOnUKTsiQ0EK5JvWiYYJcOU1YUsAqGEcGYWs/values/A2%3AB10?key=AIzaSyAaidmiX5kasRAnH8MZBh6TyHakZEnjCcY"
+      "https://sheets.googleapis.com/v4/spreadsheets/1XW7Bqt9rOnUKTsiQ0EK5JvWiYYJcOU1YUsAqGEcGYWs/values/A%3AB?key=AIzaSyAaidmiX5kasRAnH8MZBh6TyHakZEnjCcY"
     )
       .then(response => response.json())
       .then(data => {
@@ -41,9 +41,13 @@ export class FlashCard extends Component {
         <span className={styles.item}>{item[1]}</span>
       </p>));
     return (
-      <div style={{marginTop:'35px'}}>
+      <div>
+        <h3>Length:  {data.length}</h3>  
+        <div style={{marginTop:'35px'}}>
         {data}
       </div>
+      </div>
+
     )
   }
 }

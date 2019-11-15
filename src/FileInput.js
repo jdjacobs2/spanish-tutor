@@ -34,9 +34,4 @@ onChangeFile(event) {
   }
 }
 
-
-
-
-
-
 export default FileInput;

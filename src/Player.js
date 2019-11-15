@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactHowler from 'react-howler';
 import raf from 'raf';
 import Button from './Button';
+import FileInput from './FileInput';
 // import { file } from '@babel/types';
 // import { Howl, Howler } from 'howler';
 // import easy from './easy.mp3';
@@ -11,6 +12,7 @@ class Player extends Component {
     super(props);
 
     this.state = {
+      src: '',
       playing: false,
       loaded: false,
       loop: false,
@@ -23,6 +25,7 @@ class Player extends Component {
 
   componentWillUnmount() {
     this.clearRAF();
+
   }
 
   handleToggle = () => {
@@ -110,7 +113,7 @@ class Player extends Component {
       return (
         <div>
           <ReactHowler
-            src={['easy.mp3', 'audio-file.flac']}
+            src={this.state.src}
             playing={this.state.playing}
             onLoad={this.handleOnLoad}
             onPlay={this.handleOnPlay}
@@ -124,6 +127,9 @@ class Player extends Component {
           <p>{(this.state.loaded) ? 'Loaded' : 'Loading'}</p>
 
           <div className='toggles'>
+            <label >
+              <input type='button'/>
+            </label>
             <label>
               Loop:
               <input

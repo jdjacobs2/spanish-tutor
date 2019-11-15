@@ -1,0 +1,42 @@
+
+Arm — el brazo
+Back — la espalda
+Backbone — la columna vertebral
+Brain — el cerebro, el seso
+Breast, chest — el pecho
+Buttocks — las nalgas
+Calf — la pantorrilla
+Ear — el oído, la oreja
+Elbow — el codo
+Eye — el ojo
+Finger — el dedo
+Foot — el pie
+Hair — el pelo
+Hand — la mano )
+Head — la cabeza
+Heart — el corazón
+Hip — la cadera
+Intestine — el intestino
+Knee — la rodilla
+Leg — la pierna
+Liver — el hígado
+Mouth — la boca
+Muscle — el músculo
+Neck — el cuello
+Nose — la nariz
+Shoulder — el hombro
+Skin — la piel
+Stomach (abdomen) — el vientre
+Stomach (internal organ) — el estómago
+Thigh — el muslo
+Throat — la garganta
+Toe — el dedo del pie )
+Tongue — la lengua
+Tooth — el diente, la muela
+Wrist - la muñeca
+
+
+<span ng-if="!isTable" marked="text" class="ng-scope ng-isolate-scope"><p>ubicar</p>
+</span>
+
+=">>
