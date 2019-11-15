@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './App.module.css';
-import Player from './Player';
-import Voice from './Voice';
-import FileInput from './FileInput';
-import FlashCard from './FlashCard';
+import Player from './Components/Player/Player';
+import Voice from './Components/RecordVoice/RecordVoice';
+import FileInput from './Components/FileInput/FileInput';
+import FlashCard from './Components/FlashCards/FlashCards';
 // import FlashCard from './FlashCard-old';
 // import FullControl from './FullControl2';
 // import AutoPlay from './AutoPlay';
