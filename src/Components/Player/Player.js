@@ -11,7 +11,7 @@ class Player extends Component {
     super(props);
 
     this.state = {
-      src: '',
+      src: 'easy.mp3',
       playing: false,
       loaded: false,
       loop: false,
@@ -134,7 +134,7 @@ class Player extends Component {
               Loop:
               <input
                 type='checkbox'
-                checked={this.state.loop}
+                // checked={this.state.loop}
                 onChange={this.handleLoopToggle}
               />
             </label>
@@ -142,7 +142,7 @@ class Player extends Component {
               Mute:
               <input
                 type='checkbox'
-                checked={this.state.mute}
+                // checked={this.state.mute}
                 onChange={this.handleMuteToggle}
               />
             </label>
@@ -200,6 +200,9 @@ class Player extends Component {
           </Button>
           <Button onClick={this.handleRepeat} >
             Repeat
+          </Button>
+          <Button onClick={this.props.fileInput} >
+            Pick Voice File
           </Button>
         </div>
       )

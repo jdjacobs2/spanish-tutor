@@ -1,6 +1,9 @@
+// Displays a html input element
+// Set displayProp in calling component to false
+// if do not want to show normal select file button
 
 import React, { Component } from "react";
-import Button from '../UI/Button';
+import Button from "../UI/Button";
 
 class FileInput extends Component {
 
@@ -11,27 +14,45 @@ class FileInput extends Component {
     this.onChangeFile = this.onChangeFile.bind(this);
   }
 
-onChangeFile(event) {
+  static defaultProps = {
+    displayButton: true
+  }
+
+  componentDidMount() {
+    if (!this.props.displayButton) {
+      console.log('in componentDidMount');
+      this.myRef.current.click();
+    }
+  }
+
+  onChangeFile(event) {
     event.stopPropagation();
     event.preventDefault();
     const file = event.target.files[0];
-    this.setState({file:file}); /// if you want to upload latter
-}
+    this.props.newFileHandler(file);
+    this.setState({ file: file }); /// if you want to upload latter
+  }
 
   render() {
     return (
       <div>
-      <h1>FileInput</h1>
-        <input id="myInput"
-          type="file"
+        <input
+          id='myInput'
+          type='file'
           ref={this.myRef}
-          style={{ display: 'none' }}
+          style={{ display: "none" }}
           onChange={this.onChangeFile}
         />
-        
-        <Button onClick={() => { this.myRef.current.click() }} >Select FileInput </Button>
+
+        {this.props.displayButton ?
+          <Button onClick={() => {
+            this.myRef.current.click() }}
+            display
+          >
+            Select FileInput{" "}
+          </Button> : null}
       </div>
-    )
+    );
   }
 }
 
