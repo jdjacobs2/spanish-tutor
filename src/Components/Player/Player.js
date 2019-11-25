@@ -11,12 +11,12 @@ class Player extends Component {
     super(props);
 
     this.state = {
-      src: 'easy.mp3',
+      // src: 'easy.mp3',
       playing: false,
       loaded: false,
       loop: false,
       mute: false,
-      volume: 1.0,
+      volume: 0.5,
       seek: 0.00,
       repeat: 5.0
     }
@@ -98,7 +98,10 @@ class Player extends Component {
   handleRepeat = () => {
     const pos = this.state.seek.toFixed(2);
     console.log('before', pos);
-    const newPos = pos - this.state.repeat;
+    let newPos = pos - this.state.repeat;
+    if (newPos < 0) {
+      newPos = 0;
+    }
     this.player.seek(newPos);
     if (this.state.playing) {
       this._raf = raf(this.renderSeekPos);
@@ -113,7 +116,7 @@ class Player extends Component {
         <div>
           <h1>Player</h1>
           <ReactHowler
-            src={this.state.src}
+            src={this.props.src}
             playing={this.state.playing}
             onLoad={this.handleOnLoad}
             onPlay={this.handleOnPlay}

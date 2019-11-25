@@ -26,9 +26,9 @@ export class FlashCard extends Component {
 
   componentDidMount() {
     fetch(
-      "https://sheets.googleapis.com/v4/spreadsheets/1XW7Bqt9rOnUKTsiQ0EK5JvWiYYJcOU1YUsAqGEcGYWs/values/A%3AB?key=AIzaSyAaidmiX5kasRAnH8MZBh6TyHakZEnjCcY"
+      "https://sheets.googleapis.com/v4/spreadsheets/1XW7Bqt9rOnUKTsiQ0EK5JvWiYYJcOU1YUsAqGEcGYWs/values/B3:C?key=AIzaSyAaidmiX5kasRAnH8MZBh6TyHakZEnjCcY"
     )
-      .then(response => response.json())
+      .then(response =>  response.json())
       .then(data => {
         this.setState({ response: data.values })
       });

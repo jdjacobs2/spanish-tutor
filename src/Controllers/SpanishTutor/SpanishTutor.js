@@ -21,13 +21,18 @@ export class SpanishTutor extends Component {
 
   fileInputButtonHandler = () => {
     this.setState({fileInputing: true})
-    console.log('handled');
+    console.log('in fileInputButtonHandler in SpanishTutor');
     console.log( this.state.fileInputing)
   }
 
   fileInputHandler = (file) => {
     console.log(file);
-    this.setState({ src: file });
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.addEventListener('load', () => {
+      this.setState({ src: reader.result });
+    });
+    
   }
 
 
@@ -36,7 +41,7 @@ export class SpanishTutor extends Component {
     return (
       <div>
         <div className={styles.App}>
-          <Player fileInput={this.fileInputButtonHandler} />
+          <Player fileInput={this.fileInputButtonHandler} src={this.state.src}/>
           <Voice />
           { this.state.fileInputing  ?
             <FileInput

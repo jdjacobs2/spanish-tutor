@@ -20,7 +20,7 @@ class FileInput extends Component {
 
   componentDidMount() {
     if (!this.props.displayButton) {
-      console.log('in componentDidMount');
+      console.log('in FileInput.js-- componentDidMount');
       this.myRef.current.click();
     }
   }
@@ -30,7 +30,7 @@ class FileInput extends Component {
     event.preventDefault();
     const file = event.target.files[0];
     this.props.newFileHandler(file);
-    this.setState({ file: file }); /// if you want to upload latter
+    // this.setState({ file: file }); /// if you want to upload latter
   }
 
   render() {
