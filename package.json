@@ -6,8 +6,8 @@
     "classnames": "^2.2.6",
     "googleapis": "^45.0.0",
     "howler": "^2.1.2",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-howler": "^3.7.4",
     "react-scripts": "3.2.0",
     "react-speech-recognition": "^2.0.4"

@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
-import styles from './FlashCard.module.css';
+import React, { Component } from "react";
+import styles from "./FlashCard.module.css";
 
 export class FlashCard extends Component {
-
   constructor(props) {
     super(props);
 
     this.state = {
-      response: []
-    }
+      response: [],
+    };
   }
 
   // async myFetch(url){
@@ -26,31 +25,35 @@ export class FlashCard extends Component {
 
   componentDidMount() {
     fetch(
-      "https://sheets.googleapis.com/v4/spreadsheets/1XW7Bqt9rOnUKTsiQ0EK5JvWiYYJcOU1YUsAqGEcGYWs/values/B3:C?key=AIzaSyAaidmiX5kasRAnH8MZBh6TyHakZEnjCcY"
+      "https://sheets.googleapis.com/v4/spreadsheets/1XW7Bqt9rOnUKTsiQ0EK5JvWiYYJcOU1YUsAqGEcGYWs/values/A3:C?key=AIzaSyAaidmiX5kasRAnH8MZBh6TyHakZEnjCcY",
     )
-      .then(response =>  response.json())
+      .then(response => {
+        const resp = response.json();
+        // console.log(resp);
+        return resp;
+      })
       .then(data => {
-        this.setState({ response: data.values })
+        // console.log(data);
+        this.setState({ response: data.values });
       });
   }
 
   render() {
-    const data = this.state.response.map((item) =>
-      (<p className={styles.line}>
-        <span className={styles.item}>{item[0]}</span>
+    const data = this.state.response.map(item => (
+      <p className={styles.line} key={item[0]}>
         <span className={styles.item}>{item[1]}</span>
-      </p>));
+        <span className={styles.item}>{item[2]}</span>
+      </p>
+    ));
+
     return (
       <div>
         <h1>FlashCards</h1>
-        <h3>Length:  {data.length}</h3>  
-        <div style={{marginTop:'35px'}}>
-        {data}
+        <h3>Length: {data.length}</h3>
+        <div style={{ marginTop: "35px" }}>{data}</div>
       </div>
-      </div>
-
-    )
+    );
   }
 }
 
-export default FlashCard
+export default FlashCard;
